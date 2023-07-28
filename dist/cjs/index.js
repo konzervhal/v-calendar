@@ -7683,7 +7683,7 @@ function createDatePicker(props, ctx) {
     const opts = {
       patch: "date",
       formatInput: true,
-      hidePopover: true
+      hidePopover: false
     };
     if (isRange.value) {
       const dragging = !isDragging.value;
