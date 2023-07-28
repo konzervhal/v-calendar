@@ -7228,6 +7228,7 @@ const propsDef = {
   rules: [String, Object],
   is24hr: Boolean,
   hideTimeHeader: Boolean,
+  hideOnClick: { type: Boolean, default: true },
   timeAccuracy: { type: Number, default: 2 },
   isRequired: Boolean,
   isRange: Boolean,
@@ -7681,7 +7682,7 @@ function createDatePicker(props, ctx) {
     const opts = {
       patch: "date",
       formatInput: true,
-      hidePopover: false
+      hidePopover: props.hideOnClick
     };
     if (isRange.value) {
       const dragging = !isDragging.value;

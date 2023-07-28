@@ -54,6 +54,10 @@ export declare const propsDef: {
     rules: PropType<DatePartsRules | "auto">;
     is24hr: BooleanConstructor;
     hideTimeHeader: BooleanConstructor;
+    hideOnClick: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
     timeAccuracy: {
         type: NumberConstructor;
         default: number;

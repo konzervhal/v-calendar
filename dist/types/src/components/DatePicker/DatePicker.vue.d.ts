@@ -16,6 +16,10 @@ declare const _default: import("vue").DefineComponent<{
     rules: import("vue").PropType<import("../../utils/date/helpers").DatePartsRules | "auto">;
     is24hr: BooleanConstructor;
     hideTimeHeader: BooleanConstructor;
+    hideOnClick: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
     timeAccuracy: {
         type: NumberConstructor;
         default: number;
@@ -76,6 +80,10 @@ declare const _default: import("vue").DefineComponent<{
     rules: import("vue").PropType<import("../../utils/date/helpers").DatePartsRules | "auto">;
     is24hr: BooleanConstructor;
     hideTimeHeader: BooleanConstructor;
+    hideOnClick: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
     timeAccuracy: {
         type: NumberConstructor;
         default: number;
@@ -124,6 +132,7 @@ declare const _default: import("vue").DefineComponent<{
     modelModifiers: import("../../use/datePicker").ModelModifiers;
     is24hr: boolean;
     hideTimeHeader: boolean;
+    hideOnClick: boolean;
     timeAccuracy: number;
     isRequired: boolean;
     isRange: boolean;
