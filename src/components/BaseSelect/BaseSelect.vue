@@ -56,6 +56,7 @@ defineEmits(['update:modelValue']);
     font-size: var(--vc-text-base);
     font-weight: var(--vc-font-medium);
     border-radius: var(--vc-rounded);
+    border: none;
     height: 30px;
     width: max-content;
     padding: 0px 4px;
