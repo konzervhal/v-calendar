@@ -50,7 +50,7 @@
         <BaseSelect v-if="!is24hr" v-model="isAM" :options="isAMOptions" />
       </div>
     </div>
-    <div class="vc-accept"><button type="button" role="button">Kész</button></div>
+    <div class="vc-accept">Kész</div>
   </div>
 </template>
 
@@ -105,12 +105,15 @@ const {
 
 .vc-accept {
   align-self: end;
-}
-
-.vc-accept > button {
   background: var(--vc-time-select-group-bg);
   border-radius: var(--vc-rounded-md);
   border: 1px solid var(--vc-time-select-group-border);
+  cursor: pointer;
+  padding: 4px 10px;
+}
+
+.vc-accept:hover{
+  background: var(--vc-select-hover-bg);
 }
 
 .vc-time-header {

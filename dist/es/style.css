@@ -747,11 +747,14 @@
   -webkit-align-self: end;
       -ms-flex-item-align: end;
           align-self: end;
-}
-.vc-accept > button {
   background: var(--vc-time-select-group-bg);
   border-radius: var(--vc-rounded-md);
   border: 1px solid var(--vc-time-select-group-border);
+  cursor: pointer;
+  padding: 4px 10px;
+}
+.vc-accept:hover{
+  background: var(--vc-select-hover-bg);
 }
 .vc-time-header {
   display: -webkit-flex;
