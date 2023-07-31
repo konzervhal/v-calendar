@@ -8106,7 +8106,7 @@ const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
       timeAccuracy
     } = timePicker;
     function closeDatePicker() {
-      console.log(timePicker);
+      timePicker.hidePopover();
     }
     return (_ctx, _cache) => {
       return vue.openBlock(), vue.createElementBlock("div", {

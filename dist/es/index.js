@@ -8104,7 +8104,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       timeAccuracy
     } = timePicker;
     function closeDatePicker() {
-      console.log(timePicker);
+      timePicker.hidePopover();
     }
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", {

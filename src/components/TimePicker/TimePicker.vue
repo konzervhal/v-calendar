@@ -84,7 +84,7 @@ const {
 } = timePicker;
 
 function closeDatePicker(){
-  console.log(timePicker)
+  timePicker.hidePopover()
 }
 
 </script>
