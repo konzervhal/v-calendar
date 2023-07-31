@@ -3,51 +3,54 @@
     class="vc-time-picker"
     :class="[{ 'vc-invalid': !isValid, 'vc-attached': !isTimeMode }]"
   >
-    <slot name="time-header">
-      <div v-if="showHeader && date" class="vc-time-header">
-        <span class="vc-time-weekday">
-          {{ locale.formatDate(date, 'WWW') }}
-        </span>
-        <span class="vc-time-month">
-          {{ locale.formatDate(date, 'MMM') }}
-        </span>
-        <span class="vc-time-day">
-          {{ locale.formatDate(date, 'D') }}
-        </span>
-        <span class="vc-time-year">
-          {{ locale.formatDate(date, 'YYYY') }}
-        </span>
+    <div>
+      <slot name="time-header">
+        <div v-if="showHeader && date" class="vc-time-header">
+          <span class="vc-time-weekday">
+            {{ locale.formatDate(date, 'WWW') }}
+          </span>
+          <span class="vc-time-month">
+            {{ locale.formatDate(date, 'MMM') }}
+          </span>
+          <span class="vc-time-day">
+            {{ locale.formatDate(date, 'D') }}
+          </span>
+          <span class="vc-time-year">
+            {{ locale.formatDate(date, 'YYYY') }}
+          </span>
+        </div>
+      </slot>
+      <div class="vc-time-select-group">
+        <BaseIcon name="Clock" size="17" />
+        <BaseSelect v-model.number="hours" :options="hourOptions" align-right />
+        <template v-if="timeAccuracy > 1">
+          <span class="vc-time-colon">:</span>
+          <BaseSelect
+            v-model.number="minutes"
+            :options="options.minutes"
+            :align-left="timeAccuracy === 2"
+          />
+        </template>
+        <template v-if="timeAccuracy > 2">
+          <span class="vc-time-colon">:</span>
+          <BaseSelect
+            v-model.number="seconds"
+            :options="options.seconds"
+            :align-left="timeAccuracy === 3"
+          />
+        </template>
+        <template v-if="timeAccuracy > 3">
+          <span class="vc-time-decimal">.</span>
+          <BaseSelect
+            v-model.number="milliseconds"
+            :options="options.milliseconds"
+            align-left
+          />
+        </template>
+        <BaseSelect v-if="!is24hr" v-model="isAM" :options="isAMOptions" />
       </div>
-    </slot>
-    <div class="vc-time-select-group">
-      <BaseIcon name="Clock" size="17" />
-      <BaseSelect v-model.number="hours" :options="hourOptions" align-right />
-      <template v-if="timeAccuracy > 1">
-        <span class="vc-time-colon">:</span>
-        <BaseSelect
-          v-model.number="minutes"
-          :options="options.minutes"
-          :align-left="timeAccuracy === 2"
-        />
-      </template>
-      <template v-if="timeAccuracy > 2">
-        <span class="vc-time-colon">:</span>
-        <BaseSelect
-          v-model.number="seconds"
-          :options="options.seconds"
-          :align-left="timeAccuracy === 3"
-        />
-      </template>
-      <template v-if="timeAccuracy > 3">
-        <span class="vc-time-decimal">.</span>
-        <BaseSelect
-          v-model.number="milliseconds"
-          :options="options.milliseconds"
-          align-left
-        />
-      </template>
-      <BaseSelect v-if="!is24hr" v-model="isAM" :options="isAMOptions" />
     </div>
+    <div><button type="button" role="button">Kész</button></div>
   </div>
 </template>
 
@@ -85,8 +88,9 @@ const {
 .vc-time-picker {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 8px 4px;
+  align-items: flex-start;
+  padding: 8px;
+  justify-content: space-between;
   &.vc-invalid {
     pointer-events: none;
     opacity: 0.5;
