@@ -50,7 +50,7 @@
         <BaseSelect v-if="!is24hr" v-model="isAM" :options="isAMOptions" />
       </div>
     </div>
-    <div><button type="button" role="button">Kész</button></div>
+    <div class="vc-accept"><button type="button" role="button">Kész</button></div>
   </div>
 </template>
 
@@ -87,7 +87,7 @@ const {
 <style lang="css">
 .vc-time-picker {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   padding: 8px;
   justify-content: space-between;
@@ -103,6 +103,16 @@ const {
   }
 }
 
+.vc-accept {
+  align-self: end;
+}
+
+.vc-accept > button {
+  background: var(--vc-time-select-group-bg);
+  border-radius: var(--vc-rounded-md);
+  border: 1px solid var(--vc-time-select-group-border);
+}
+
 .vc-time-header {
   display: flex;
   align-items: center;
@@ -110,8 +120,6 @@ const {
   font-weight: var(--vc-font-semibold);
   text-transform: uppercase;
   margin-top: -4px;
-  padding-left: 4px;
-  padding-right: 4px;
   line-height: 21px;
 }
 

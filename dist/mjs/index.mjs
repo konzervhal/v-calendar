@@ -8076,7 +8076,7 @@ const _hoisted_6 = { class: "vc-time-select-group" };
 const _hoisted_7 = /* @__PURE__ */ createElementVNode("span", { class: "vc-time-colon" }, ":", -1);
 const _hoisted_8 = /* @__PURE__ */ createElementVNode("span", { class: "vc-time-colon" }, ":", -1);
 const _hoisted_9 = /* @__PURE__ */ createElementVNode("span", { class: "vc-time-decimal" }, ".", -1);
-const _hoisted_10 = /* @__PURE__ */ createElementVNode("div", null, [
+const _hoisted_10 = /* @__PURE__ */ createElementVNode("div", { class: "vc-accept" }, [
   /* @__PURE__ */ createElementVNode("button", {
     type: "button",
     role: "button"

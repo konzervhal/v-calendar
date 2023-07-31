@@ -722,9 +722,9 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -743,6 +743,16 @@
 .vc-time-picker > * + * {
     margin-top: 4px;
 }
+.vc-accept {
+  -webkit-align-self: end;
+      -ms-flex-item-align: end;
+          align-self: end;
+}
+.vc-accept > button {
+  background: var(--vc-time-select-group-bg);
+  border-radius: var(--vc-rounded-md);
+  border: 1px solid var(--vc-time-select-group-border);
+}
 .vc-time-header {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -754,8 +764,6 @@
   font-weight: var(--vc-font-semibold);
   text-transform: uppercase;
   margin-top: -4px;
-  padding-left: 4px;
-  padding-right: 4px;
   line-height: 21px;
 }
 .vc-time-select-group {
