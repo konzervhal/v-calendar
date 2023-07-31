@@ -8066,19 +8066,19 @@ function createTimePicker(props) {
     is24hr
   };
 }
-const _hoisted_1 = {
+const _hoisted_1 = { class: "vc-time-box" };
+const _hoisted_2 = {
   key: 0,
   class: "vc-time-header"
 };
-const _hoisted_2 = { class: "vc-time-weekday" };
-const _hoisted_3 = { class: "vc-time-month" };
-const _hoisted_4 = { class: "vc-time-day" };
-const _hoisted_5 = { class: "vc-time-year" };
-const _hoisted_6 = { class: "vc-time-select-group" };
-const _hoisted_7 = /* @__PURE__ */ vue.createElementVNode("span", { class: "vc-time-colon" }, ":", -1);
+const _hoisted_3 = { class: "vc-time-weekday" };
+const _hoisted_4 = { class: "vc-time-month" };
+const _hoisted_5 = { class: "vc-time-day" };
+const _hoisted_6 = { class: "vc-time-year" };
+const _hoisted_7 = { class: "vc-time-select-group" };
 const _hoisted_8 = /* @__PURE__ */ vue.createElementVNode("span", { class: "vc-time-colon" }, ":", -1);
-const _hoisted_9 = /* @__PURE__ */ vue.createElementVNode("span", { class: "vc-time-decimal" }, ".", -1);
-const _hoisted_10 = /* @__PURE__ */ vue.createElementVNode("div", { class: "vc-accept" }, "Kész", -1);
+const _hoisted_9 = /* @__PURE__ */ vue.createElementVNode("span", { class: "vc-time-colon" }, ":", -1);
+const _hoisted_10 = /* @__PURE__ */ vue.createElementVNode("span", { class: "vc-time-decimal" }, ".", -1);
 const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
   __name: "TimePicker",
   props: {
@@ -8105,20 +8105,23 @@ const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
       showHeader,
       timeAccuracy
     } = timePicker;
+    function closeDatePicker() {
+      console.log(timePicker);
+    }
     return (_ctx, _cache) => {
       return vue.openBlock(), vue.createElementBlock("div", {
         class: vue.normalizeClass(["vc-time-picker", [{ "vc-invalid": !vue.unref(isValid), "vc-attached": !vue.unref(isTimeMode) }]])
       }, [
-        vue.createElementVNode("div", null, [
+        vue.createElementVNode("div", _hoisted_1, [
           vue.renderSlot(_ctx.$slots, "time-header", {}, () => [
-            vue.unref(showHeader) && vue.unref(date) ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [
-              vue.createElementVNode("span", _hoisted_2, vue.toDisplayString(vue.unref(locale).formatDate(vue.unref(date), "WWW")), 1),
-              vue.createElementVNode("span", _hoisted_3, vue.toDisplayString(vue.unref(locale).formatDate(vue.unref(date), "MMM")), 1),
-              vue.createElementVNode("span", _hoisted_4, vue.toDisplayString(vue.unref(locale).formatDate(vue.unref(date), "D")), 1),
-              vue.createElementVNode("span", _hoisted_5, vue.toDisplayString(vue.unref(locale).formatDate(vue.unref(date), "YYYY")), 1)
+            vue.unref(showHeader) && vue.unref(date) ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, [
+              vue.createElementVNode("span", _hoisted_3, vue.toDisplayString(vue.unref(locale).formatDate(vue.unref(date), "WWW")), 1),
+              vue.createElementVNode("span", _hoisted_4, vue.toDisplayString(vue.unref(locale).formatDate(vue.unref(date), "MMM")), 1),
+              vue.createElementVNode("span", _hoisted_5, vue.toDisplayString(vue.unref(locale).formatDate(vue.unref(date), "D")), 1),
+              vue.createElementVNode("span", _hoisted_6, vue.toDisplayString(vue.unref(locale).formatDate(vue.unref(date), "YYYY")), 1)
             ])) : vue.createCommentVNode("", true)
           ]),
-          vue.createElementVNode("div", _hoisted_6, [
+          vue.createElementVNode("div", _hoisted_7, [
             vue.createVNode(_sfc_main$d, {
               name: "Clock",
               size: "17"
@@ -8131,7 +8134,7 @@ const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
               "align-right": ""
             }, null, 8, ["modelValue", "options"]),
             vue.unref(timeAccuracy) > 1 ? (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 0 }, [
-              _hoisted_7,
+              _hoisted_8,
               vue.createVNode(_sfc_main$2, {
                 modelValue: vue.unref(minutes),
                 "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => vue.isRef(minutes) ? minutes.value = $event : null),
@@ -8141,7 +8144,7 @@ const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
               }, null, 8, ["modelValue", "options", "align-left"])
             ], 64)) : vue.createCommentVNode("", true),
             vue.unref(timeAccuracy) > 2 ? (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 1 }, [
-              _hoisted_8,
+              _hoisted_9,
               vue.createVNode(_sfc_main$2, {
                 modelValue: vue.unref(seconds),
                 "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => vue.isRef(seconds) ? seconds.value = $event : null),
@@ -8151,7 +8154,7 @@ const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
               }, null, 8, ["modelValue", "options", "align-left"])
             ], 64)) : vue.createCommentVNode("", true),
             vue.unref(timeAccuracy) > 3 ? (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 2 }, [
-              _hoisted_9,
+              _hoisted_10,
               vue.createVNode(_sfc_main$2, {
                 modelValue: vue.unref(milliseconds),
                 "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => vue.isRef(milliseconds) ? milliseconds.value = $event : null),
@@ -8168,7 +8171,10 @@ const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
             }, null, 8, ["modelValue", "options"])) : vue.createCommentVNode("", true)
           ])
         ]),
-        _hoisted_10
+        vue.createElementVNode("div", {
+          class: "vc-accept",
+          onClick: closeDatePicker
+        }, "Kész")
       ], 2);
     };
   }

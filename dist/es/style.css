@@ -743,6 +743,11 @@
 .vc-time-picker > * + * {
     margin-top: 4px;
 }
+.vc-time-box{
+  -webkit-align-self: end;
+      -ms-flex-item-align: end;
+          align-self: end;
+}
 .vc-accept {
   -webkit-align-self: end;
       -ms-flex-item-align: end;
@@ -751,7 +756,7 @@
   border-radius: var(--vc-rounded-md);
   border: 1px solid var(--vc-time-select-group-border);
   cursor: pointer;
-  padding: 4px 10px;
+  padding: 3px 9px;
 }
 .vc-accept:hover{
   background: var(--vc-select-hover-bg);

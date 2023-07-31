@@ -3,7 +3,7 @@
     class="vc-time-picker"
     :class="[{ 'vc-invalid': !isValid, 'vc-attached': !isTimeMode }]"
   >
-    <div>
+    <div class="vc-time-box">
       <slot name="time-header">
         <div v-if="showHeader && date" class="vc-time-header">
           <span class="vc-time-weekday">
@@ -50,7 +50,7 @@
         <BaseSelect v-if="!is24hr" v-model="isAM" :options="isAMOptions" />
       </div>
     </div>
-    <div class="vc-accept">Kész</div>
+    <div class="vc-accept" @click="closeDatePicker">Kész</div>
   </div>
 </template>
 
@@ -82,6 +82,11 @@ const {
   showHeader,
   timeAccuracy,
 } = timePicker;
+
+function closeDatePicker(){
+  console.log(timePicker)
+}
+
 </script>
 
 <style lang="css">
@@ -103,13 +108,17 @@ const {
   }
 }
 
+.vc-time-box{
+  align-self: end;
+}
+
 .vc-accept {
   align-self: end;
   background: var(--vc-time-select-group-bg);
   border-radius: var(--vc-rounded-md);
   border: 1px solid var(--vc-time-select-group-border);
   cursor: pointer;
-  padding: 4px 10px;
+  padding: 3px 9px;
 }
 
 .vc-accept:hover{

@@ -8064,19 +8064,19 @@ function createTimePicker(props) {
     is24hr
   };
 }
-const _hoisted_1 = {
+const _hoisted_1 = { class: "vc-time-box" };
+const _hoisted_2 = {
   key: 0,
   class: "vc-time-header"
 };
-const _hoisted_2 = { class: "vc-time-weekday" };
-const _hoisted_3 = { class: "vc-time-month" };
-const _hoisted_4 = { class: "vc-time-day" };
-const _hoisted_5 = { class: "vc-time-year" };
-const _hoisted_6 = { class: "vc-time-select-group" };
-const _hoisted_7 = /* @__PURE__ */ createElementVNode("span", { class: "vc-time-colon" }, ":", -1);
+const _hoisted_3 = { class: "vc-time-weekday" };
+const _hoisted_4 = { class: "vc-time-month" };
+const _hoisted_5 = { class: "vc-time-day" };
+const _hoisted_6 = { class: "vc-time-year" };
+const _hoisted_7 = { class: "vc-time-select-group" };
 const _hoisted_8 = /* @__PURE__ */ createElementVNode("span", { class: "vc-time-colon" }, ":", -1);
-const _hoisted_9 = /* @__PURE__ */ createElementVNode("span", { class: "vc-time-decimal" }, ".", -1);
-const _hoisted_10 = /* @__PURE__ */ createElementVNode("div", { class: "vc-accept" }, "Kész", -1);
+const _hoisted_9 = /* @__PURE__ */ createElementVNode("span", { class: "vc-time-colon" }, ":", -1);
+const _hoisted_10 = /* @__PURE__ */ createElementVNode("span", { class: "vc-time-decimal" }, ".", -1);
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   __name: "TimePicker",
   props: {
@@ -8103,20 +8103,23 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       showHeader,
       timeAccuracy
     } = timePicker;
+    function closeDatePicker() {
+      console.log(timePicker);
+    }
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", {
         class: normalizeClass(["vc-time-picker", [{ "vc-invalid": !unref(isValid), "vc-attached": !unref(isTimeMode) }]])
       }, [
-        createElementVNode("div", null, [
+        createElementVNode("div", _hoisted_1, [
           renderSlot(_ctx.$slots, "time-header", {}, () => [
-            unref(showHeader) && unref(date) ? (openBlock(), createElementBlock("div", _hoisted_1, [
-              createElementVNode("span", _hoisted_2, toDisplayString(unref(locale).formatDate(unref(date), "WWW")), 1),
-              createElementVNode("span", _hoisted_3, toDisplayString(unref(locale).formatDate(unref(date), "MMM")), 1),
-              createElementVNode("span", _hoisted_4, toDisplayString(unref(locale).formatDate(unref(date), "D")), 1),
-              createElementVNode("span", _hoisted_5, toDisplayString(unref(locale).formatDate(unref(date), "YYYY")), 1)
+            unref(showHeader) && unref(date) ? (openBlock(), createElementBlock("div", _hoisted_2, [
+              createElementVNode("span", _hoisted_3, toDisplayString(unref(locale).formatDate(unref(date), "WWW")), 1),
+              createElementVNode("span", _hoisted_4, toDisplayString(unref(locale).formatDate(unref(date), "MMM")), 1),
+              createElementVNode("span", _hoisted_5, toDisplayString(unref(locale).formatDate(unref(date), "D")), 1),
+              createElementVNode("span", _hoisted_6, toDisplayString(unref(locale).formatDate(unref(date), "YYYY")), 1)
             ])) : createCommentVNode("", true)
           ]),
-          createElementVNode("div", _hoisted_6, [
+          createElementVNode("div", _hoisted_7, [
             createVNode(_sfc_main$d, {
               name: "Clock",
               size: "17"
@@ -8129,7 +8132,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
               "align-right": ""
             }, null, 8, ["modelValue", "options"]),
             unref(timeAccuracy) > 1 ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [
-              _hoisted_7,
+              _hoisted_8,
               createVNode(_sfc_main$2, {
                 modelValue: unref(minutes),
                 "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => isRef(minutes) ? minutes.value = $event : null),
@@ -8139,7 +8142,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
               }, null, 8, ["modelValue", "options", "align-left"])
             ], 64)) : createCommentVNode("", true),
             unref(timeAccuracy) > 2 ? (openBlock(), createElementBlock(Fragment, { key: 1 }, [
-              _hoisted_8,
+              _hoisted_9,
               createVNode(_sfc_main$2, {
                 modelValue: unref(seconds),
                 "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => isRef(seconds) ? seconds.value = $event : null),
@@ -8149,7 +8152,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
               }, null, 8, ["modelValue", "options", "align-left"])
             ], 64)) : createCommentVNode("", true),
             unref(timeAccuracy) > 3 ? (openBlock(), createElementBlock(Fragment, { key: 2 }, [
-              _hoisted_9,
+              _hoisted_10,
               createVNode(_sfc_main$2, {
                 modelValue: unref(milliseconds),
                 "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => isRef(milliseconds) ? milliseconds.value = $event : null),
@@ -8166,7 +8169,10 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
             }, null, 8, ["modelValue", "options"])) : createCommentVNode("", true)
           ])
         ]),
-        _hoisted_10
+        createElementVNode("div", {
+          class: "vc-accept",
+          onClick: closeDatePicker
+        }, "Kész")
       ], 2);
     };
   }
